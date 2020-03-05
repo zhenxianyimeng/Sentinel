@@ -188,6 +188,8 @@ public class CtSph implements Sph {
      * otherwise null will return.
      * </p>
      *
+     *
+     * chainMap作为一个缓存，如果chainMap中没有，再去创建一个slotchain
      * @param resourceWrapper target resource
      * @return {@link ProcessorSlotChain} of the resource
      */
@@ -201,7 +203,7 @@ public class CtSph implements Sph {
                     if (chainMap.size() >= Constants.MAX_SLOT_CHAIN_SIZE) {
                         return null;
                     }
-
+                    //创建slot链
                     chain = SlotChainProvider.newSlotChain();
                     Map<ResourceWrapper, ProcessorSlotChain> newMap = new HashMap<ResourceWrapper, ProcessorSlotChain>(
                         chainMap.size() + 1);

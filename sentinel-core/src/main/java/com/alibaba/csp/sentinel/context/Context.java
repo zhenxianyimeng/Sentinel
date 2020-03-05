@@ -53,6 +53,7 @@ import com.alibaba.csp.sentinel.slots.nodeselector.NodeSelectorSlot;
  * @author Eric Zhao
  * @see ContextUtil
  * @see NodeSelectorSlot
+ * context是保存在threadlocal中
  */
 public class Context {
 

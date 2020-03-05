@@ -40,8 +40,11 @@ import com.alibaba.csp.sentinel.util.TimeUtil;
  */
 public abstract class LeapArray<T> {
 
+    //时间窗口的长度 = intervalInMs/ sampleCount
     protected int windowLengthInMs;
+    // 采样窗口个数，通过多个采样窗口进行平均值计算
     protected int sampleCount;
+    // 采样时间 = 采样时间窗口 * 采样个数
     protected int intervalInMs;
 
     protected final AtomicReferenceArray<WindowWrap<T>> array;
@@ -71,7 +74,7 @@ public abstract class LeapArray<T> {
 
     /**
      * Get the bucket at current timestamp.
-     *
+     * 获取当前窗口
      * @return the bucket at current timestamp
      */
     public WindowWrap<T> currentWindow() {
