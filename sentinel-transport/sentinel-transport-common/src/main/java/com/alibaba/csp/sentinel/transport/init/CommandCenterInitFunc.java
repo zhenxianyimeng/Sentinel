@@ -23,6 +23,7 @@ import com.alibaba.csp.sentinel.transport.CommandCenter;
 
 /**
  * @author Eric Zhao
+ * CommandCenter中启动一个 netty-server用来启接受 dashboard发送的请求
  */
 @InitOrder(-1)
 public class CommandCenterInitFunc implements InitFunc {

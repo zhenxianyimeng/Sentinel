@@ -30,6 +30,7 @@ public class AppInfo {
 
     private Integer appType = 0;
 
+    //每个应用的机器信息
     private Set<MachineInfo> machines = ConcurrentHashMap.newKeySet();
 
     public AppInfo() {}
